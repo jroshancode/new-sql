@@ -1,6 +1,35 @@
 #2025 - 08 - 01 
 
-  -- arithmetical
+# Operator:- 
+1. Arithmetical Operator ( + , - , * , / , % ) 
+2. Assignment Operator ( =, +=, -= , *= , /=, %=) 
+3. Comparision Operator ( < , > , != , <> , <= , >= ) 
+4. Logical Operator ( OR, AND , XOR , NOT ) 
+
+-- AND 
+TRUE and FALSE -> FALSE 
+FALSE and FALSE -> FALSE 
+TRUE and TRUE -> TRUE 
+False and True -> False
+
+-- OR  ( any one conditions ) 
+True or False -> True 
+False or False -> False 
+False or True -> True 
+True or True -> True 
+
+-- XOR ( should be only one conditons true )
+True or False -> True 
+False or False -> False 
+False or True -> True 
+True or True -> False
+
+-- NOT 
+True -> False 
+false -> True
+
+
+  -- Arithmetical
  select bmi , (bmi + 12) as total, 
  (bmi - 2 ) as sub,
  (bmi * 2 )as mul ,
