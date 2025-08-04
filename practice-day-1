@@ -1,0 +1,32 @@
+#2025-08-04
+
+use sql_course;
+
+select *from medical;
+select* from product;
+select*from stu_performance;
+
+-- get the record from product table which product name is wireless mouse
+-- get the record from medical table for smoker yes
+-- fetch the record from student performs table for partent involvement is median and previous score is desc order
+select *from product
+where name='wireless Mouse';
+
+
+
+SELECT *FROM MEDICAL
+where smoker='yes';
+
+select * from stu_performance
+where `parental_involvement`='medium'
+order by previous_scores desc;
+-- count(*) , count(specific column ) , 
+-- distinct(*) , distinct(specific column name)
+
+select count(*) from medical;
+select count(bmi)from medical;
+
+-- Access_to_Resources
+
+select distinct * from stu_performance;
+select distinct access_to_resources from stu_performance;
