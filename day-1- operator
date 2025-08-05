@@ -6,13 +6,13 @@
 3. Comparision Operator ( < , > , != , <> , <= , >= ) 
 4. Logical Operator ( OR, AND , XOR , NOT ) 
 
--- AND 
+-- AND ( both condition should be true) 
 TRUE and FALSE -> FALSE 
 FALSE and FALSE -> FALSE 
 TRUE and TRUE -> TRUE 
 False and True -> False
 
--- OR  ( any one conditions ) 
+-- OR  ( Atleast any one conditions should be true ) 
 True or False -> True 
 False or False -> False 
 False or True -> True 
