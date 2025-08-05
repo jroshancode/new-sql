@@ -1,0 +1,61 @@
+#2025 - 08 - 05 
+
+  use sql_course;
+
+select * from medical_costs;
+select * from product;
+
+-- Operator  
+
+select Age,BMI ,(BMI + 5) as addition , (BMI -10) as subtract,
+BMI + (BMI * 5) /  100 as 5_percentage
+from medical_costs;
+
+select 5 / 2, 5 % 2 
+
+-- Fetch the records for Sex is male 
+select Sex, BMI , Smoker, `Medical Cost` from medical_costs 
+where Sex = 'male';
+
+-- BMI = 15.6  
+
+-- Comparison operator  (  <  , > , <= , >= , != , <> ) 
+select * from medical_costs;
+ 
+-- Fetch the medical reports for BMI is less than 15 
+-- and sorted by Childen in Desc order 
+select * from medical_costs where BMI < 15 
+order by children desc;
+
+-- Logical ( And , OR , NOT , XOR ) 
+-- Fetch the medical reports for BMI is more than or equal 25 and sex is female 
+select * from medical_costs 
+where BMI >= 25 and sex = 'female';
+
+-- Fetch the medical reports for BMI is more than or equal 25 or sex is female 
+select * from medical_costs 
+where BMI >= 25 or sex = 'female';
+
+-- Fetch the all medical reports for each Smoker is 
+-- Yes and sex is female where childen not equal 5
+select * from medical_costs 
+where Smoker='yes' and sex ='female' and children !=5;
+
+-- count above recores for female 
+select count(*) from medical_costs 
+where Smoker='yes' and sex ='female' and children !=5;
+
+-- count above recores for male
+select count(*) from medical_costs 
+where Smoker='yes' and sex ='male' and children !=5;
+
+-- Rename table studentperformacefactors to stu_perfomance
+alter table studentperformancefactors rename stu_perfomance;
+rename table studentperformancefactors to stu_perfomance;
+
+select * from stu_perfomance;
+-- Fetch the all student performace for motivation level is low and high 
+-- Fetch the student performace who's previous score is less or equal 70 
+-- and Exam score is more the or equal is 90
+
+
