@@ -6,3 +6,7 @@ hackerrank:- [ https://www.hackerrank.com/domains/sql ] <br>
 sqlzoo  :- [https://sqlzoo.net/wiki/SQL_Tutorial ] <br> 
 Geeksforgeeks :- [ https://www.geeksforgeeks.org/sql/sql-exercises/] <br> 
 Leetcode :- https://leetcode.com/studyplan/top-sql-50/<br> 
+
+
+#2025-08-08 
+1. what is between , and , or , in ,
