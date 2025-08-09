@@ -10,15 +10,13 @@ sqlzoo  :- [https://sqlzoo.net/wiki/SQL_Tutorial ] <br>
 Geeksforgeeks :- [ https://www.geeksforgeeks.org/sql/sql-exercises/] <br> 
 Leetcode :- https://leetcode.com/studyplan/top-sql-50/<br> 
 
+## 2025 -08-01 
+1. What is SQL or Why SQL ? <br>
+2. What is different between Entity or attribute or tuples of records ? <br>
+3. What is Database Schemas ?  <br>
+4. What is Server or Database ? <br>
 
-## 2025-08-08 
-1. what is between , and , or , in , is null , is not null.
-2. What is SQL or Why SQL ? <br>
-3. What is different between Entity or attribute or tuples of records ? <br>
-4. What is Database Schemas ?  <br>
-5. What is Server or Database ? <br> 
-
-## 2025-08 -09 
+## 2025-08 -02 
 1. What is a primary key, and why is it important?
 2. What is the difference between a primary key and a foreign key?
 3. Explain the difference between DELETE, TRUNCATE, and DROP.
@@ -26,7 +24,7 @@ Leetcode :- https://leetcode.com/studyplan/top-sql-50/<br>
 5. suppose Amazon has stored much information about customers, products, orders, categories or more in the database tables. Customers want to change their information, which Sql commands should you use to solve this problem?
 6. I have users or posts tables and I want a relationship between both tables and get information, so what is your approach, and how do you solve this problem ?
 
-## 2025-08-10
+## 2025-08-5
 1. Write a sql query delete employees and posts tables from database.
 2. what is the use case of ALTER TABLE and DROP TABLE?
 3. write a sql query for DROP and TRUNCATE TABLE?
@@ -34,10 +32,13 @@ Leetcode :- https://leetcode.com/studyplan/top-sql-50/<br>
 5. Why we use  IF EXISTS or IF NOT EXISTS in SQL queries?
 6. How do understand ADD and MODIFY Commands in Mysql?
 
-## 2025-08-11
+## 2025-08-6
 1. How to Create a Database abc if this database have already exists ?
 2. Write a command to display all database name ?
 3. Created Students table with id,s_name, age, email, phone and address attributes makes sure id is primary key and any columns have never store null values?
 4. What is output of the code ( select * from students )
 5. Explane this SQL query ( Truncate table ABC; )
 6. What is the advantages or disadvantages of using drop commands ?
+
+## 2025-08-08 
+1. what is between , and , or , in , is null , is not null.
