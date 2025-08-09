@@ -42,3 +42,38 @@ Leetcode :- https://leetcode.com/studyplan/top-sql-50/<br>
 
 ## 2025-08-08 
 1. what is between , and , or , in , is null , is not null.
+2. Create a table Students with:
+  StudentID (integer, primary key) <br>
+  Name (NOT NULL) <br>
+  Age (integer, must be >= 18) <br>
+  Email (must be unique) <br>
+  EnrolledDate (default current date) <br>
+  
+3. Create a table Employees with:
+  EmpID (integer, primary key)
+  Name (VARCHAR)
+  ManagerID (integer, nullable)
+
+4. Create a table Orders with:
+  OrderID (integer, primary key)
+  OrderDate (DATE)
+  OrderTime (TIME)
+  CreatedAt (DATETIME, default current date/time)
+  Insert 3 orders with different dates and times.
+
+5. Create a table Products with the following:
+  ProductID (integer, primary key)
+  Price (decimal, 2 decimal places)
+  Stock (integer, default 0)
+  Insert 3 products with different prices and stocks.
+
+6. Create a table Products with the following:
+  ProductID (integer, primary key)
+  Price (decimal, 2 decimal places)
+  Stock (integer, default 0)
+  Insert 3 products with different prices and stocks.
+
+7. Create a table Customers with:
+  CustomerID (integer, primary key)
+  FirstName (variable-length up to 30 chars)
+  Gender (fixed-length 1 char)
