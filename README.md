@@ -49,31 +49,31 @@ Leetcode :- https://leetcode.com/studyplan/top-sql-50/<br>
   Email (must be unique) <br>
   EnrolledDate (default current date) <br>
   
-3. Create a table Employees with:
-  EmpID (integer, primary key)
-  Name (VARCHAR)
-  ManagerID (integer, nullable)
+3. Create a table Employees with: <br>
+  EmpID (integer, primary key) <br>
+  Name (VARCHAR) <br>
+  ManagerID (integer, nullable) <br>
 
-4. Create a table Orders with:
-  OrderID (integer, primary key)
-  OrderDate (DATE)
-  OrderTime (TIME)
-  CreatedAt (DATETIME, default current date/time)
-  Insert 3 orders with different dates and times.
+4. Create a table Orders with: <br>
+  OrderID (integer, primary key) <br>
+  OrderDate (DATE) <br>
+  OrderTime (TIME) <br>
+  CreatedAt (DATETIME, default current date/time) <br>
+  Insert 3 orders with different dates and times. <br>
 
-5. Create a table Products with the following:
-  ProductID (integer, primary key)
-  Price (decimal, 2 decimal places)
-  Stock (integer, default 0)
-  Insert 3 products with different prices and stocks.
+5. Create a table Products with the following: <br>
+  ProductID (integer, primary key) <br>
+  Price (decimal, 2 decimal places) <br>
+  Stock (integer, default 0) <br>
+  Insert 3 products with different prices and stocks. <br>
 
-6. Create a table Products with the following:
-  ProductID (integer, primary key)
-  Price (decimal, 2 decimal places)
-  Stock (integer, default 0)
-  Insert 3 products with different prices and stocks.
+6. Create a table Products with the following: <br>
+  ProductID (integer, primary key) <br>
+  Price (decimal, 2 decimal places) <br>
+  Stock (integer, default 0)  <br>
+  Insert 3 products with different prices and stocks. <br>
 
-7. Create a table Customers with:
-  CustomerID (integer, primary key)
-  FirstName (variable-length up to 30 chars)
-  Gender (fixed-length 1 char)
+7. Create a table Customers with: <br>
+  CustomerID (integer, primary key) <br>
+  FirstName (variable-length up to 30 chars) <br>
+  Gender (fixed-length 1 char) <br>
