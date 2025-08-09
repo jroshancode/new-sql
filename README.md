@@ -1,5 +1,8 @@
 #New_sql
 I have used for learning and pracitce and prefer to you also.  <br>
+
+<img width="1102" height="583" alt="image" src="https://github.com/user-attachments/assets/69e2e883-d749-4bcc-a98a-7dc0476adf6f" />
+
 W3schools:- [ https://www.w3schools.com/sql/sql_exercises.asp] <br>
 Codechef:- [ https://www.codechef.com/practice/sql-case-studies-topic-wise] <br> 
 hackerrank:- [ https://www.hackerrank.com/domains/sql ] <br> 
