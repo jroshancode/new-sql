@@ -101,4 +101,4 @@ SQL operators are symbols or keywords used to perform operations on data in a qu
 7. Find all distinct Medical records where region is southeast or northeast and gender is female and age is less than 25 and greater than 18.
 8. Count the all Student records for Parental Involvement is low and extracurricular activitiesLIKE is yes.
 9. Find all Student records where Exam Score IS NULL or Previous Scores is not null.
-10. Used between , in , and != or <> operator on medical data.
+10. Used between , in , and , != or <> operator on medical data.
