@@ -89,4 +89,16 @@ SQL operators are symbols or keywords used to perform operations on data in a qu
 4. Logical Operators ( And, or , not )
 5. Special Operators  ( Between , IN , Like, is null, is not null , exists , not exists )
 6. Bitwise Operators ( & , | , ^ , ~, <<  , >> )
-7. Set Operators ( UNION , UNION ALL , INTERSECT , EXCEPT / MINUS ) 
+7. Set Operators ( UNION , UNION ALL , INTERSECT , EXCEPT / MINUS )
+
+## Practice questions:- 
+1. Write a query to increase the medical charges  by 15% of all medical reports.
+2. Write a query to find the remainder when dividing Previous Scores by 3 in Student performance table.
+3. Find Student Records where Previous Scores > 70 and Exam Score is less than 90.
+4. Fetech the Student records where Parental Education Level is College or Postgraduate.
+5. Fetch the Medical records where Gender is not male.
+6. Fetch the Medical records where medical charges greater than 25000 and less than 32500.
+7. Find all Medical records where region is southeast or northeast and gender is female and age is less than 25 and greater than 18.
+8. Find all Student records for Parental Involvement is low and extracurricular activitiesLIKE is yes.
+9. Find all Student records where Exam Score IS NULL or Previous Scores is not null.
+10. Used between , in , and != or <> operator on medical data.
