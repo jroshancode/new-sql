@@ -32,7 +32,14 @@ select * from medical_costs
 where Sex="Male" and children in(0,2,5) or smoker ='Yes';
 
 -- is null or is not null 
--- Only Only for check null value in a specific column 
+-- Only Only check for null value in a specific column 
 
+-- Fetch the medical reports where BMI is null or not null
 select * from medical_costs
-where BMI is null
+where BMI is null;
+
+select * from medical_costs where BMI is not null;
+
+-- fetch the all medical reports where smoker is not null
+selec * from medical_costs 
+where Smoker is not null;
