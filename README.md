@@ -76,4 +76,17 @@ Leetcode :- https://leetcode.com/studyplan/top-sql-50/<br>
 7. Create a table Customers with: <br>
   CustomerID (integer, primary key) <br>
   FirstName (variable-length up to 30 chars) <br>
-  Gender (fixed-length 1 char) <br> 
+  Gender (fixed-length 1 char) <br>
+
+## ** Notes:- 
+What Are SQL Operators?
+SQL operators are symbols or keywords used to perform operations on data in a query, such as comparison, logical checks, arithmetic calculations, and pattern matching.
+
+## Types of SQL Operators
+1. Arithmetic Operators ( + , - , * => multiply , / => quotient , % => Modular  ) 
+2. Assignment operator ( = ) 
+3. Comparison Operators ( < , > , <= , >= , != , <> , = )
+4. Logical Operators ( And, or , not )
+5. Special Operators  ( Between , IN , Like, is null, is not null , exists , not exists )
+6. Bitwise Operators ( & , | , ^ , ~, <<  , >> )
+7. Set Operators ( UNION , UNION ALL , INTERSECT , EXCEPT / MINUS ) 
