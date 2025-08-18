@@ -1,0 +1,38 @@
+#2025 - 08 - 18 
+
+
+create database db_testing ;
+use db_testing;
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY auto_increment,
+    Name VARCHAR(100) NOT NULL,
+    Age INT CHECK (Age >= 18),
+    Email VARCHAR(150) UNIQUE not null,
+    EnrolledDate datetime DEFAULT current_timestamp
+);
+INSERT INTO Students (StudentID, Name, Age, Email) VALUES
+(1, 'Amit Sharma', 20, 'amit.sharma@example.com'),
+(2, 'Neha Verma', 22, 'neha.verma@example.com'),
+(3, 'Rahul Singh', 19, 'rahul.singh@example.com'),
+(4, 'Priya Mehta', 21, 'priya.mehta@example.com'),
+(5, 'Rohit Kumar', 23, 'rohit.kumar@example.com'),
+(6, 'Sneha Gupta', 20, 'sneha.gupta@example.com'),
+(7, 'Karan Patel', 24, 'karan.patel@example.com'),
+(8, 'Pooja Yadav', 25, 'pooja.yadav@example.com'),
+(9, 'Vikas Chauhan', 22, 'vikas.chauhan@example.com'),
+(10, 'Simran Kaur', 21, 'simran.kaur@example.com'),
+(11, 'Manish Reddy', 26, 'manish.reddy@example.com'),
+(12, 'Anjali Nair', 23, 'anjali.nair@example.com'),
+(13, 'Deepak Joshi', 20, 'deepak.joshi@example.com'),
+(14, 'Ritika Sharma', 22, 'ritika.sharma@example.com'),
+(15, 'Sandeep Das', 19, 'sandeep.das@example.com'),
+(16, 'Meena Iyer', 24, 'meena.iyer@example.com'),
+(17, 'Arjun Malhotra', 21, 'arjun.malhotra@example.com'),
+(18, 'Kavita Roy', 25, 'kavita.roy@example.com'),
+(19, 'Harsh Jain', 23, 'harsh.jain@example.com') ,
+(20, 'Swati Deshmukh', 22, 'swati.deshmukh@example.com');
+
+
+select * from students;
+select count(*) from students;
+
