@@ -1,0 +1,61 @@
+#2025 - 08 - 19 
+
+use sql_course;
+
+show tables;
+
+select * from medical_costs;
+select * from product;
+select * from stu_perfomance;
+
+-- Gorup by and Aggregation function ( sum , count ,max,min,avg ) 
+-- total number of records 
+select count(*) from medical_costs;
+select count(BMI) from medical_costs;
+
+
+select max(`Medical Cost`) , min(`Medical Cost`), avg(`Medical Cost`), sum(`Medical Cost`) 
+from medical_costs;
+
+
+-- Group by for Each smoker 
+select avg(`Medical Cost`), sum(`Medical Cost`) , Smoker
+from medical_costs group by Smoker;
+
+
+-- find avg , total sum of Medical cost for each childen in northwest region 
+
+select avg(`Medical Cost`) , sum(`Medical Cost`), Children,region
+from medical_costs where region = 'northwest'
+group by Children;
+
+-- for each 
+select avg(`Medical Cost`) average , sum(`Medical Cost`) as total_costs , Region , Sex
+from medical_costs
+group by  Region , Sex
+order by total_costs; 
+
+
+use my_db;
+
+select * from train;
+
+-- select max,min,sum,avg =return only single value 
+
+select max(Sales)as maximun from train;
+select min(Sales)as minimum from train;
+select sum(Sales)as total_sum from train;
+select avg(Sales)as average from train;
+
+select max(Sales)as maximun, min(Sales)as minimum , sum(Sales)as total_sum 
+, avg(Sales)as average
+from train ;
+
+select Category ,  max(Sales)as maximun, min(Sales)as minimum , sum(Sales)as total_sum , 
+avg(Sales)as average 
+from train group by Category
+
+
+
+
+
