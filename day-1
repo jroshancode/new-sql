@@ -90,7 +90,7 @@ Client -> request -> server -> response
 -- Code 
 
 
-## How many tuypes of sql or other words characters in the SQL
+## How many types of sql or other words characters in the SQL
 
 -- 1. DDL ( Data Definition Language )
 -- 2. DML ( Data Manipulate Language )
