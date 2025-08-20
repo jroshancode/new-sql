@@ -1,0 +1,73 @@
+# 2025 - 08 - 20
+
+-- find total sum and avg of Sales for each Ship mode 
+-- find total sum and avg of Sales for each Segment and order by total sales desc 
+-- -- find total sum and avg of Sales for each City 
+-- find total sum and avg of Sales for each State and average is sorted by ascending order 
+-- -- find total sum and avg of Sales for each Region 
+-- find total sum and avg , max ,min of Sales for each Category 
+-- find total sum and avg of Sales for each sub-category
+-- -- find total sum and avg of Sales for each category and Sub Category 
+
+SELECT 
+    `Ship Mode`,
+    SUM(Sales) AS Total_Sales,
+    AVG(Sales) AS Avg_Sales
+FROM train
+GROUP BY `Ship Mode`;
+
+select avg(sales) average , sum(sales) as total_costs , state 
+from train
+group by state
+order by total_costs desc, average asc ;
+
+
+SELECT Segment, SUM(Sales) AS Total_Sales,
+   AVG(Sales) AS Avg_Sales 
+   from train group by Segment
+ORDER BY Total_Sales DESC;
+
+-- find total sum and avg of Sales for each State and average id by ascending order 
+-- -- find total sum and avg of Sales for each Region 
+
+select segment,state ,sum(sales) AS Total_Sales,
+     Avg(Sales) as Avg_Sales
+From train
+Group BY State , segment
+Order BY Avg_Sales Asc;
+
+
+-- find total sum and avg , max ,min of Sales for each Category 
+-- find total sum and avg of Sales for each sub-category
+-- -- find total sum and avg of Sales for each category and Sub Category 
+
+SELECT Category, SUM(Sales) AS Total_Sales, AVG(Sales) AS Avg_Sales 
+   from train group by Category
+ORDER BY Total_Sales DESC;
+
+
+-- Top or lowest total sales for each category 
+SELECT Category, SUM(Sales) AS Total_Sales, AVG(Sales) AS Avg_Sales 
+   from train group by Category
+ORDER BY Total_Sales DESC limit 1;
+
+SELECT Category, SUM(Sales) AS Total_Sales, AVG(Sales) AS Avg_Sales 
+   from train group by Category
+ORDER BY Total_Sales asc limit 1;
+
+ -- top highest total sales for each sub- category
+ 
+SELECT `Sub-Category`, SUM(Sales) AS Total_Sales, AVG(Sales) AS Avg_Sales 
+   from train group by `Sub-Category`
+ORDER BY Total_Sales DESC limit 3;
+
+-- highest second or lowest second 
+
+
+SELECT `Sub-Category`, SUM(Sales) AS Total_Sales, AVG(Sales) AS Avg_Sales 
+   from train group by `Sub-Category`
+ORDER BY Total_Sales DESC limit 3 offset 1;
+
+SELECT `Sub-Category`, SUM(Sales) AS Total_Sales, AVG(Sales) AS Avg_Sales 
+   from train group by `Sub-Category`
+ORDER BY Total_Sales DESC limit 1 offset 1;
