@@ -2,17 +2,17 @@
 -- from => join => where => group by => having => select => order by => limit or offset 
 
 -- C  R U  D Operations:- 
-C    -> Create or new information store in the database.
+C    -> Create or new information store in the database table.
 
 Create  or CREATE or CrEate or create ( command )
 
-R   -> Read or retrive 
+R   -> Read or retrive or fetch
 Select  ( command )
 
-U  -> Update or edit information which have already store in the database
+U  -> Update or edit information which have already store in the database table
 Update  ( command ) 
 
-D  -> Delete information from the database
+D  -> Delete information from the database table
 
 Delete  ( command )
 
