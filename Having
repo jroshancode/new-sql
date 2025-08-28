@@ -1,0 +1,45 @@
+# 2025 - 08 - 27 
+use sql_course;
+show tables;
+
+use my_db;
+
+select * from train;
+
+-- Get average sales for each categories and sub-categories
+select Category , avg(Sales) average
+from train group by Category order by average;
+
+select `Sub-Category` , avg(Sales) average
+from train group by `Sub-Category` order by average;
+
+-- Get Highest sales for each categories and sub-categories
+select Category , max(Sales) average
+from train group by Category order by average;
+
+select `Sub-Category` , max(Sales) average
+from train group by `Sub-Category` order by average;
+
+-- -- Get average sales for each categories and sub-categories which average sales more than 100
+select Category , avg(Sales) average
+from train group by Category having avg(Sales) > 100
+order by average;
+
+select `Sub-Category` , avg(Sales) average
+from train group by `Sub-Category` having avg(Sales) > 100
+order by average;
+
+
+-- -- Get average sales for each categories and sub-categories which maximum sales more than 100
+select Category , avg(Sales) average
+from train group by Category having max(Sales) > 100
+order by average;
+
+select `Sub-Category` , avg(Sales) average
+from train group by `Sub-Category` having max(Sales) > 100
+order by average;
+
+
+
+-- Joins 
+
