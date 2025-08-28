@@ -1,0 +1,76 @@
+#2025 - 08 - 28 
+
+-- load database 
+use sql_course;
+
+📦 LEFT JOIN  🔹 LEFT JOIN (all from left + matches from right)
+🧱 All records from the left + matched from the right
+
+SELECT e.Emp_Name, d.Dept_Name
+FROM Employees e
+LEFT JOIN Departments d ON e.Dept_ID = d.Dept_ID;
+
+📌 Example: List all products, even those with no sales
+SELECT * FROM Products p 
+LEFT JOIN Orders o ON p.ProductID = o.ProductID;
+
+
+📩 RIGHT JOIN 🔹 RIGHT JOIN (all from right + matches from left)
+🧲 All from the right + matched from the left
+SELECT e.Emp_Name, d.Dept_Name
+FROM Employees e
+RIGHT JOIN Departments d ON e.Dept_ID = d.Dept_ID;
+
+
+
+-- relationships ( Departments => Employees ) or ( Employees => Departments ) 
+-- Employees Table
+CREATE TABLE Employees (
+    Emp_ID INT PRIMARY KEY,
+    Emp_Name VARCHAR(50),
+    Dept_ID INT
+);
+
+INSERT INTO Employees VALUES
+(1, 'Alice', 101),
+(2, 'Bob', 102),
+(3, 'Charlie', NULL),
+(4, 'David', 104),
+(5, 'Eve', 105);
+
+-- Departments Table
+CREATE TABLE Departments (
+    Dept_ID INT PRIMARY KEY,
+    Dept_Name VARCHAR(50)
+);
+
+INSERT INTO Departments VALUES
+(101, 'HR'),
+(102, 'IT'),
+(103, 'Finance'),
+(106, 'Marketing');
+
+select * from Employees;
+select * from Departments;
+--  Left join
+select emp.* , dep.*
+from Employees as emp 
+left join Departments as dep 
+on dep.Dept_Id = emp.Dept_Id;
+
+
+select emp.Emp_Id,emp.Emp_Name,emp.Dept_Id , dep.Dept_Name
+from Employees as emp 
+left join Departments as dep 
+on dep.Dept_Id = emp.Dept_Id;
+
+
+
+select * from Employees;
+select * from Departments;
+--  right join
+
+select emp.* , dep.*
+from Employees as emp 
+right join Departments as dep 
+on dep.Dept_Id = emp.Dept_Id;
