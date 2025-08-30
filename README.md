@@ -102,3 +102,83 @@ SQL operators are symbols or keywords used to perform operations on data in a qu
 8. Count the all Student records for Parental Involvement is low and extracurricular activitiesLIKE is yes.
 9. Find all Student records where Exam Score IS NULL or Previous Scores is not null.
 10. Used between , in , and , != or <> operator on medical data.
+11. 
+
+
+
+
+#2025 - 08 - 30
+
+-- task - 1
+
+create table business(
+id int primary key auto_increment,
+name varchar(20) not null,
+email varchar(50) not null,
+password varchar(20) not null,
+user_name varchar(20) not null unique,
+address varchar(40),
+salary int not null);
+
+
+insert into business(name,email,password,user_name,address,salary)
+values("ankit","ankit@gmail.com","a123","ank123","street road",15000),
+("Mohit",null,"b123","mus123","mumbai",20000),
+("raunak","c@gmail.com",null,"rau123","delhi",10000);
+
+
+insert into business(name,email,password,user_name,salary)
+values("A","a@gmail.com","a123","ank123",15000),
+("B","b@gmail.com",null,"mus123",20000),
+("C","c@gmail.com","c123","rau123",null);
+
+
+
+create table product(
+p_id int primary key auto_increment,
+name varchar(30) not null,
+category varchar(30) not null unique,
+quantity int,
+price float not null);
+
+
+
+insert into product(name,category,quantity,price)
+values("laptop","i3",2,80000),
+("headphones","boat",1,5000),
+("monitor","zebronics",3,25000),
+("LED",null,3,25000);
+
+
+
+insert into product(name,category,quantity,price)
+values("laptop","i3",2,80000),
+("headphones","boat",1,5000),
+("monitor","",3,25000);
+
+
+
+-- Apply count and order by for read following these two tables data.
+select * from product;
+
+select * from business;
+
+
+
+-- Task -- 2 
+
+Create a table Students with: StudentID (integer, primary key)
+Name (NOT NULL)
+Age (integer, must be >= 18)
+Email (must be unique)
+EnrolledDate (default current date)
+
+
+Create a table Employees with:
+EmpID (integer, primary key)
+Name (VARCHAR)
+ManagerID (integer, nullable)
+
+
+
+// Create table and insert any five records
