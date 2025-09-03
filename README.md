@@ -182,3 +182,12 @@ ManagerID (integer, nullable)
 
 
 // Create table and insert any five records
+
+
+# 2025 - 09 - 03 
+1. How to Create a Database abc if this database have already exists ?
+2. Write a command to display all database name ?
+3. Created Students table with id,s_name, age, email, phone and address attributes makes sure id is primary key and any columns have never store null values?
+4. What is output of the code ( select * from students )
+5. Explane this SQL query ( Truncate table ABC; )
+6. What is the advantages or disadvantages of using drop commands ?
