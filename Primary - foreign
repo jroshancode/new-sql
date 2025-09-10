@@ -1,0 +1,176 @@
+# 2025 - 09 - 10 
+
+use sql_course;
+
+drop table Product1;
+drop table Customer;
+drop table Orders;
+
+-- 1️⃣ Create Tables
+-- Product Table
+CREATE TABLE Product1 (
+    Pid INT PRIMARY KEY AUTO_INCREMENT,
+    Pname VARCHAR(100),
+    Category VARCHAR(50),
+    Price DECIMAL(10,2),
+    Created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Customer Table
+CREATE TABLE Customer (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    salary DECIMAL(10,2),
+    phone VARCHAR(20),
+    address VARCHAR(200)
+);
+
+-- Order Table
+CREATE TABLE Orders (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    c_id INT,
+    p_id INT,
+    price DECIMAL(10,2),
+    category VARCHAR(50),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (c_id) REFERENCES Customer(id) on delete cascade on update cascade,
+    FOREIGN KEY (p_id) REFERENCES Product1(Pid) on delete cascade on update cascade
+);
+
+select * from Customer;
+select * from Product1 ;
+select * from orders;
+
+
+-- Insert Product infomation:- 
+INSERT INTO Product1 (Pname, Category, Price, Created_at)
+VALUES 
+('Laptop', 'Electronics', 60000, NOW()),
+('Mobile', 'Electronics', 30000, NOW()),
+('Keyboard', 'Electronics', 1500, NOW()),
+('Chair', 'Furniture', 5000, NOW()),
+('Table', 'Furniture', 7000, NOW()),
+('Shoes', 'Fashion', 2000, NOW()),
+('Watch', 'Fashion', 3500, NOW()),
+('TV', 'Electronics', 45000, NOW()),
+('Fridge', 'Appliances', 55000, NOW()),
+('Microwave', 'Appliances', 10000, NOW()),
+('Bottle', 'Accessories', 300, NOW()),
+('Bag', 'Accessories', 1500, NOW()),
+('Pen', 'Stationary', 50, NOW()),
+('Notebook', 'Stationary', 100, NOW()),
+('Headphones', 'Electronics', 2500, NOW()),
+('Camera', 'Electronics', 40000, NOW()),
+('Sofa', 'Furniture', 25000, NOW()),
+('Bed', 'Furniture', 30000, NOW()),
+('Shirt', 'Fashion', 1200, NOW()),
+('Jeans', 'Fashion', 2200, NOW());
+
+-- Insert 20 Customers
+INSERT INTO Customer (name, email, salary, phone, address)
+VALUES
+('Alice', 'alice@example.com', 45000, '9998887771', 'Delhi'),
+('Bob', 'bob@example.com', 55000, '9998887772', 'Mumbai'),
+('Charlie', 'charlie@example.com', 60000, '9998887773', 'Bangalore'),
+('David', 'david@example.com', 35000, '9998887774', 'Kolkata'),
+('Eva', 'eva@example.com', 50000, '9998887775', 'Pune'),
+('Frank', 'frank@example.com', 70000, '9998887776', 'Hyderabad'),
+('Grace', 'grace@example.com', 40000, '9998887777', 'Chennai'),
+('Hannah', 'hannah@example.com', 47000, '9998887778', 'Ahmedabad'),
+('Ian', 'ian@example.com', 80000, '9998887779', 'Delhi'),
+('Jack', 'jack@example.com', 30000, '9998887780', 'Noida'),
+('Kiran', 'kiran@example.com', 90000, '9998887781', 'Gurgaon'),
+('Liam', 'liam@example.com', 65000, '9998887782', 'Delhi'),
+('Mona', 'mona@example.com', 42000, '9998887783', 'Mumbai'),
+('Nina', 'nina@example.com', 38000, '9998887784', 'Bangalore'),
+('Omar', 'omar@example.com', 52000, '9998887785', 'Hyderabad'),
+('Priya', 'priya@example.com', 75000, '9998887786', 'Kolkata'),
+('Qasim', 'qasim@example.com', 82000, '9998887787', 'Pune'),
+('Rita', 'rita@example.com', 36000, '9998887788', 'Chennai'),
+('Sam', 'sam@example.com', 48000, '9998887789', 'Delhi'),
+('Tina', 'tina@example.com', 51000, '9998887790', 'Noida');
+
+-- Insert 60 Orders (to make ~100 records total)
+
+-- We’ll mix customer_id and product_id randomly.
+
+INSERT INTO Orders (c_id, p_id, price, category, created_at)
+SELECT 
+    FLOOR(1 + RAND()*20),     -- random customer
+    FLOOR(1 + RAND()*20),     -- random product
+    FLOOR(500 + RAND()*60000),-- random price
+    ELT(FLOOR(1+RAND()*5),'Electronics','Furniture','Fashion','Accessories','Appliances'),
+    NOW()
+FROM dual
+LIMIT 60;
+
+
+select * from Customer;
+select * from Product1 ;
+select * from orders;
+
+desc orders;
+-- already exists in my parent tables
+-- insert into orders(id,c_id,p_id,price,category) 
+-- values(112,19,1,2000.34,'Electronics')
+
+
+-- does not exists in my parent tables
+insert into orders(id,c_id,p_id,price,category) 
+values(113,21,1,2000.34,'Electronics');
+
+insert into orders(id,c_id,p_id,price,category) 
+values(113,20,25,2000.34,'Electronics');
+
+describe customer;
+
+-- 📘 5. Insert & Test
+INSERT INTO Customer (name, email,salary,phone,address) VALUES
+('Alice', 'muskan@example.com',12345678.90,'09876543212','pqr'),
+('Bob', 'payal@example.com',12345678.90,'09876543212','pqr');
+
+
+describe product1;
+
+INSERT INTO Product1 (pname, Category, price) VALUES
+('Laptop',"tech", '80000.35'),
+('Phone', "tech",'40000.65');
+
+describe orders;
+INSERT INTO Orders (c_id, p_id) VALUES
+(1, 1),  -- Alice buys Laptop
+(2, 2);  -- Bob buys Phone
+
+
+
+DELETE FROM Customer WHERE id = 1;
+-- Alice’s order will also be deleted (CASCADE)
+
+DELETE FROM Product1 WHERE pid = 2;
+-- Bob’s order product will be set to NULL (SET NULL)
+
+-- Ya updated 
+update Customer set name ='Muskan' where id = 1;
+update Customer set id =101 where id = 1;
+
+update Product1 set Pname = 'Beauty' where pid  = 101;
+update Product1 set Pid = 405 where pid  = 5;
+
+
+
+select * from Customer;
+select * from Product1 ;
+
+
+
+📊 Key Takeaways
+
+PK = unique identifier (NOT NULL, UNIQUE).
+
+FK = reference to PK of another table.
+
+FK maintains referential integrity.
+
+Use ON DELETE / ON UPDATE rules for relationships.
+select * from orders;
