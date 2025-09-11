@@ -1,0 +1,70 @@
+# 2025 - 09 - 11 
+
+A subquery in MySQL is a SELECT statement nested within another SQL statement. 
+It is also known as an inner query or nested query, 
+while the statement containing it is referred to as the outer query or main query. 
+Subqueries are always enclosed in parentheses.
+
+
+use sql_course;
+
+
+select * from Customer;
+select * from Product1 ;
+select * from orders;
+
+
+(select id from customer )
+union all 
+(select c_id from orders);
+
+(select id from customer )
+union 
+(select c_id from orders);
+
+
+(select id from customer )
+INTERSECT 
+(select c_id from orders);
+
+(select id from customer )
+except
+(select c_id from orders);
+(select c_id from orders)
+except
+(select id from customer )
+
+
+
+( select name from customer )
+union 
+(select category  from orders);
+
+( select name as new_name from customer )
+union 
+(select category as new_name  from orders)
+
+-- sub query 
+
+
+
+
+select * from medical_costs;
+
+select * from medical_costs where gender !='female' ;
+select * from medical_costs where gender ='male' ;
+
+select * from medical_costs where children in(0,1);
+
+select * from medical_costs where age >=35;
+
+select * from medical_costs where not(age >=35);
+
+
+
+select * from medical_costs where children not in(0,1);
+
+
+-- alter table medical_costs rename column sex to gender;
+
+
