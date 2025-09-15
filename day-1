@@ -53,6 +53,12 @@ Id  Name  age  Gender  Address  phone  number  Email_Id  ( attributes name )
 ## Horizontal(columns ) or vertical ( rows)
 
 
+In most table software, horizontal refers to columns (side-to-side), while vertical refers to rows (up-and-down). 
+You can change text orientation to vertical within cells using the "Text Direction" tool in the ribbon's "Layout" 
+tab or by right-clicking a cell in Microsoft Word, or using alignment options in Excel. 
+You can also format a table to display rows as columns (a vertical layout) or by rotating the entire table
+
+
 ## Product ( Entity )
 
 product_id , product_name, categories , Price, weight or quantity or etc.  
