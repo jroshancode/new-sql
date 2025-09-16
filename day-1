@@ -50,7 +50,7 @@ Id  Name  age  Gender  Address  phone  number  Email_Id  ( attributes name )
 4   John  21  female    UK 5678 5678  em      
 5   Emma  20  Male    USA 1234 1234  john
  
-## Horizontal(columns ) or vertical ( rows)
+## Horizontal( Rows ) or vertical ( columns )
 
 
 In most table software, horizontal refers to columns (side-to-side), while vertical refers to rows (up-and-down). 
