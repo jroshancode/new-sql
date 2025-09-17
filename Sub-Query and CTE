@@ -1,0 +1,165 @@
+# 2025 - 09 - 17 
+
+
+use sql_course;
+
+-- drop table product;
+-- drop table orders;
+-- drop table customer;
+
+-- 1️⃣ Create Tables
+-- Product Table
+CREATE TABLE Product1 (
+    Pid INT PRIMARY KEY AUTO_INCREMENT,
+    Pname VARCHAR(100),
+    Category VARCHAR(50),
+    Price DECIMAL(10,2),
+    Created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Customer Table
+CREATE TABLE Customer (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    salary DECIMAL(10,2),
+    phone VARCHAR(20),
+    address VARCHAR(200)
+);
+
+-- Order Table
+CREATE TABLE Orders (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    c_id INT,
+    p_id INT,
+    price DECIMAL(10,2),
+    category VARCHAR(50),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (c_id) REFERENCES Customer(id) on delete cascade on update cascade,
+    FOREIGN KEY (p_id) REFERENCES Product1(Pid) on delete cascade on update cascade
+);
+
+select * from Customer;
+select * from Product1 ;
+select * from orders;
+
+
+-- Insert Product infomation:- 
+INSERT INTO Product1 (Pname, Category, Price, Created_at)
+VALUES 
+('Laptop', 'Electronics', 60000, NOW()),
+('Mobile', 'Electronics', 30000, NOW()),
+('Keyboard', 'Electronics', 1500, NOW()),
+('Chair', 'Furniture', 5000, NOW()),
+('Table', 'Furniture', 7000, NOW()),
+('Shoes', 'Fashion', 2000, NOW()),
+('Watch', 'Fashion', 3500, NOW()),
+('TV', 'Electronics', 45000, NOW()),
+('Fridge', 'Appliances', 55000, NOW()),
+('Microwave', 'Appliances', 10000, NOW()),
+('Bottle', 'Accessories', 300, NOW()),
+('Bag', 'Accessories', 1500, NOW()),
+('Pen', 'Stationary', 50, NOW()),
+('Notebook', 'Stationary', 100, NOW()),
+('Headphones', 'Electronics', 2500, NOW()),
+('Camera', 'Electronics', 40000, NOW()),
+('Sofa', 'Furniture', 25000, NOW()),
+('Bed', 'Furniture', 30000, NOW()),
+('Shirt', 'Fashion', 1200, NOW()),
+('Jeans', 'Fashion', 2200, NOW());
+
+-- Insert 20 Customers
+INSERT INTO Customer (name, email, salary, phone, address)
+VALUES
+('Alice', 'alice@example.com', 45000, '9998887771', 'Delhi'),
+('Bob', 'bob@example.com', 55000, '9998887772', 'Mumbai'),
+('Charlie', 'charlie@example.com', 60000, '9998887773', 'Bangalore'),
+('David', 'david@example.com', 35000, '9998887774', 'Kolkata'),
+('Eva', 'eva@example.com', 50000, '9998887775', 'Pune'),
+('Frank', 'frank@example.com', 70000, '9998887776', 'Hyderabad'),
+('Grace', 'grace@example.com', 40000, '9998887777', 'Chennai'),
+('Hannah', 'hannah@example.com', 47000, '9998887778', 'Ahmedabad'),
+('Ian', 'ian@example.com', 80000, '9998887779', 'Delhi'),
+('Jack', 'jack@example.com', 30000, '9998887780', 'Noida'),
+('Kiran', 'kiran@example.com', 90000, '9998887781', 'Gurgaon'),
+('Liam', 'liam@example.com', 65000, '9998887782', 'Delhi'),
+('Mona', 'mona@example.com', 42000, '9998887783', 'Mumbai'),
+('Nina', 'nina@example.com', 38000, '9998887784', 'Bangalore'),
+('Omar', 'omar@example.com', 52000, '9998887785', 'Hyderabad'),
+('Priya', 'priya@example.com', 75000, '9998887786', 'Kolkata'),
+('Qasim', 'qasim@example.com', 82000, '9998887787', 'Pune'),
+('Rita', 'rita@example.com', 36000, '9998887788', 'Chennai'),
+('Sam', 'sam@example.com', 48000, '9998887789', 'Delhi'),
+('Tina', 'tina@example.com', 51000, '9998887790', 'Noida');
+
+-- Insert 60 Orders (to make ~100 records total)
+
+-- We’ll mix customer_id and product_id randomly.
+
+INSERT INTO Orders (c_id, p_id, price, category, created_at)
+SELECT 
+    FLOOR(1 + RAND()*20),     -- random customer
+    FLOOR(1 + RAND()*20),     -- random product
+    FLOOR(500 + RAND()*60000),-- random price
+    ELT(FLOOR(1+RAND()*5),'Electronics','Furniture','Fashion','Accessories','Appliances'),
+    NOW()
+FROM dual
+LIMIT 60;
+
+
+select * from Customer;
+select * from Product1 ;
+select * from orders;
+
+-- fetch all orders for each customer who's salary is more than 35000
+select * from orders where c_id in(
+select id from customer where salary > 35000
+);
+
+-- Common table expression 
+with CTE as ( 
+select id from customer where salary > 35000
+)
+
+select * from orders where c_id in(
+select id from CTE
+)
+
+-- fetch customers records who's salary is more than tha average salary 
+
+select * from customer where salary > (
+select avg(salary) from customer )
+
+-- duplicate records
+select c_id , count(c_id) 
+from orders group by c_id having count(*) > 1;
+
+select name, email, salary, phone 
+from customer where id in( 
+select c_id  
+from orders group by c_id having count(*) > 1
+);
+
+-- common table expression 
+with duplicate_id as ( 
+select c_id  
+from orders group by c_id having count(*) > 1
+)
+
+select name, email, salary, phone 
+from customer where id in ( select * from duplicate_id ) 
+
+WITH cte_name AS (
+    SELECT column1, column2, ...
+    FROM table_name
+    WHERE condition
+)
+SELECT *
+FROM cte_name;
+WITH HighSalary AS (
+    SELECT emp_id, emp_name, salary
+    FROM Employees
+    WHERE salary > 50000
+)
+SELECT *
+FROM HighSalary;
