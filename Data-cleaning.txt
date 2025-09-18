@@ -102,19 +102,6 @@ select ProductName,City,Email,sum( Quantity * PricePerUnit) as total,
 avg( Quantity * PricePerUnit) as average
 from data_clean group by ProductName,City,Email order by total desc;
 
--- 
-
--- jeasn 
--- jeasn (480) +  t-shirt ( 199 ) 
-679 
-
-
--- NOida -5 ( more ) -- next 5 to 10 or 15
-
--- Notes :-
-
--- Noida  ( 50 + ) cloths 
--- Delhi  -> Electornic 
 
 
 
