@@ -11,7 +11,7 @@
 -- alter -> add size of the particular columns   
 -- alter table abc nename abc to pqr 
 
-Keys and Constainsts:- 
+Keys and Constrainsts:- 
 1. Not Null   ( Never store not nulls)
 
 2. Unique   ( Always store unique but may or not null values)
@@ -20,8 +20,8 @@ Keys and Constainsts:-
 
 4. checks    ( [Male, Female ,Other])  or ( age > 18 ) 
 
-5. Defatult  ( False ) eg.. active  users 
-Salary   ( base salry by defalutl 10000)
+5. Default  ( False ) eg.. active  users 
+Salary   ( base salary by default 10000 )
 
 use sql_course;
 
