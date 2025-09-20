@@ -6,6 +6,10 @@
 -- Find Null values
 -- Replace NULLs , or drop or delete records 
 
+# Replace null value 
+ a) mean / Median ( Numerical column )  <br>
+ b ) Mode  ( Categorical column ) => group by => most occurrence.
+
 -- b) Removing Duplicates
 SELECT column_name, COUNT(*) FROM your_table
 GROUP BY column_name
