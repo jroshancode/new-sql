@@ -1,0 +1,74 @@
+# 2025 - 09 - 23
+
+select * from train;
+
+-- updated 
+-- '1', 'CA-2017-152156', '2017-11-08 00:00:00', '2017-11-11', 'Second Class', 'CG-12520', 'Claire Gute', 'Consumer', 'United States', 'Henderson', 'Kentucky', '42420', 'South', 'FUR-BO-10001798', 'Furniture', 'Bookcases', 'Bush Somerset Collection Bookcase', '261.96'
+-- south , 261.96
+update train set Sales = 550, Region ='Central' where `Row ID` = 1;
+update train set Sales = '261.96', Region ='South' where `Row ID` = 1;
+select * from train where `Row ID` = 1;
+
+-- Data clenaing ( string funciton , math function , date/time funciton ) 
+
+use rock_sql;
+select * from e_dataset;
+
+-- Age , count, sum,min amd max
+
+select avg(`Price (Rs.)`) from e_dataset;
+
+select `Price (Rs.)`, avg(`Price (Rs.)`) from e_dataset; -- wrong
+
+select avg(`Price (Rs.)`) , sum(`Price (Rs.)`) , min(`Price (Rs.)`) , 
+max(`Price (Rs.)`) ,count(*) from e_dataset;
+
+-- for each payment method
+select avg(`Price (Rs.)`) , sum(`Price (Rs.)`) , min(`Price (Rs.)`) , 
+max(`Price (Rs.)`) ,count(*) from e_dataset group by payment_method;
+
+select payment_method, avg(`Price (Rs.)`) , sum(`Price (Rs.)`) , min(`Price (Rs.)`) , 
+max(`Price (Rs.)`) ,count(*) from e_dataset group by payment_method;
+
+select payment_method, avg(`Price (Rs.)`) , sum(`Price (Rs.)`) , min(`Price (Rs.)`) , 
+max(`Price (Rs.)`) ,count(*) from e_dataset group by payment_method having count(*) > 750;
+
+
+-- for each category 
+select category, avg(`Price (Rs.)`) , sum(`Price (Rs.)`) , min(`Price (Rs.)`) , 
+max(`Price (Rs.)`) ,count(*) from e_dataset group by category;
+
+-- round , truncate 
+
+select `Final_Price(Rs.)`, round(`Final_Price(Rs.)`,1),truncate(`Final_Price(Rs.)`,1)
+from e_dataset;
+
+select `Final_Price(Rs.)`, round(`Final_Price(Rs.)`,2),truncate(`Final_Price(Rs.)`,2)
+from e_dataset;
+
+-- ceil , floor , abs, sign 
+select `Price (Rs.)`, ceil(`Price (Rs.)`),floor(`Price (Rs.)`), abs(`Price (Rs.)`), 
+sign(`Price (Rs.)`)
+from e_dataset;
+
+select abs(-056) , sign(-56), sign(566.5454) ;
+
+
+select payment_method, round(avg(`Price (Rs.)`) , 2)  , round(sum(`Price (Rs.)`) , 3) 
+ , truncate(min(`Price (Rs.)`),3) , 
+abs(max(`Price (Rs.)`)) ,count(*) from e_dataset group by payment_method
+
+
+
+
+--  / or // or % 
+
+create table testing_abc as ( 
+select `Price (Rs.)`, round(mod(`Price (Rs.)`,10),2) , round(`Price (Rs.)` % 10,3), round(`Price (Rs.)` / 10 , 3) 
+from e_dataset ) ;
+
+-- power , square 
+select `Price (Rs.)`, power(`Price (Rs.)`,2), round(sqrt(`Price (Rs.)`) , 2) 
+from e_dataset;
+select * from testing_aBC;
+
