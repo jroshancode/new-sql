@@ -1,0 +1,87 @@
+# 2025 - 10 - 16 
+
+   use my_db;
+ 
+ select * from healthcare;
+ select * from train;
+ 
+ select * from train;
+
+alter table train modify column `Order Date` datetime;
+describe train;
+
+select * from train where `Order Date` = '2017-11-08';
+
+select * from train where `Order Date` = '2017';
+
+-- 
+select now(), curdate(),current_time(), current_date(),current_timestamp(),curtime();
+
+-- year(), month(), days()
+select * ,year(`Requesting date`),month(`Requesting date`),day(`Requesting date`) from healthcare;
+
+select * from train where year(`Order Date`) = '2017';
+
+-- Get the records for specific year or month or day
+select `Order Date`,year(`Order Date`),month(`Order Date`),day(`Order Date`) from train 
+where year(`Order Date`) = 2016;
+
+select `Order Date`, dayofweek(`Order Date`) , dayofyear(`Order Date`) , hour(`Order Date`),
+minute(`Order Date`),second(`Order Date`) , week(`Order Date`),weekday(`Order Date`), 
+quarter(`Order Date`) from train;
+
+select dayofyear(now());
+
+
+-- -- Date format 
+select `Order Date`, date_format(`Order Date`,"%Y-%m-%d"),date_format(`Order Date`,"%h-%i-%s %p"), date_format(`Order Date`,"%W-%M-%Y"),
+date_format(`Order Date`,"%d-%m-%Y")
+from train;
+
+select `Appointment date`, date_format(`Appointment date`,"%Y-%m-%d"),date_format(`Appointment date`,"%h-%i-%s %p"), date_format(`Appointment date`,"%W-%M-%Y"),
+date_format(`Appointment date`,"%d-%m-%Y")
+from healthcare;
+
+-- Str to date 
+
+
+
+  use sql_course;
+select * from healthcare;
+select * from train;
+
+select `Order Date`, str_to_date(`Order Date`,"%d/%m/%Y")
+from train;
+
+update train set `Order Date` = str_to_date(`Order Date`,"%d/%m/%Y");
+
+select `Ship Date`, str_to_date(`Ship Date`,"%d/%m/%Y") from train;
+
+update train set `Ship Date` = str_to_date(`Ship Date`,"%d/%m/%Y");
+
+
+select `Ship Date`,date_format(`Ship Date`,"%W-%M-%Y"),date_format(`Ship Date`,"%y-%M-%D") ,
+date_format(`Ship Date`,"%Y-%m-%d %h-%i-%s %p") from train;
+
+
+select * from healthcare;
+
+select `Requesting date` , str_to_date(`Requesting date`,"%m/%d/%Y %h:%i%p") 
+from healthcare;
+
+select `Appointment date` , str_to_date(`Appointment date`,"%m/%d/%Y %h:%i%p") 
+from healthcare;
+
+describe healthcare;
+update healthcare set `Requesting date` = str_to_date(`Requesting date`,"%m/%d/%Y %h:%i%p") ;
+
+alter table healthcare modify `Appointment date` datetime;
+
+update healthcare set `Appointment date` = str_to_date(`Appointment date`,"%d/%m/%Y");
+ 
+UPDATE healthcare 
+SET `Appointment date` = STR_TO_DATE(`Appointment date`, '%m/%d/%y %h:%i %p');
+
+UPDATE healthcare 
+SET `Appointment date` = STR_TO_DATE(`Appointment date`, "%c/%e/%y %r"); 
+
