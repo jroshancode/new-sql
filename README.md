@@ -273,3 +273,19 @@ ManagerID (integer, nullable)
 4. What is output of the code ( select * from students )
 5. Explane this SQL query ( Truncate table ABC; )
 6. What is the advantages or disadvantages of using drop commands ?
+
+# 2025 - 10 - 17 
+SELECT COUNT(*) FROM medical_costs 
+WHERE Age BETWEEN 18 AND 25;
+
+👉 BETWEEN is inclusive — it includes both the boundary values.
+So this query counts all rows where
+Age >= 18 AND Age <= 25.
+
+SELECT COUNT(*) FROM medical_costs 
+WHERE Age > 18 AND Age < 25;
+
+👉 This query is exclusive — it does not include 18 and 25.
+It only counts rows where
+Age is strictly greater than 18 and strictly less than 25.
+
