@@ -289,3 +289,58 @@ WHERE Age > 18 AND Age < 25;
 It only counts rows where
 Age is strictly greater than 18 and strictly less than 25.
 
+
+# 2025 - 09 - 19
+<img width="599" height="415" alt="image" src="https://github.com/user-attachments/assets/aa48f043-ea53-4278-a8b1-ce693ae94512" />
+
+![WhatsApp Image 2025-09-18 at 11 10 21](https://github.com/user-attachments/assets/2f50382f-9c04-4776-9920-ac66e4c68fc3)
+
+![WhatsApp Image 2025-09-18 at 11 39 24](https://github.com/user-attachments/assets/47618dcf-315d-4829-990c-5edbf3fabe42)
+
+# 2025 - 09 - 19 
+CHAR stores fixed-length strings, padding shorter values with spaces to reach the specified length, which can be faster for consistent-length data but wastes space. VARCHAR stores variable-length strings, only using the space for the actual characters plus some overhead for length information. Use CHAR for consistent data like state abbreviations and VARCHAR for variable data like names or addresses
+
+<img width="599" height="415" alt="image" src="https://github.com/user-attachments/assets/c77c7508-217e-4d24-b5ff-b619febb99ed" />
+
+
+# Alter , Default , Check 
+![WhatsApp Image 2025-09-19 at 18 13 30 (1)](https://github.com/user-attachments/assets/8792add9-73f1-4199-96c5-881481f10b66)
+![WhatsApp Image 2025-09-19 at 18 13 30](https://github.com/user-attachments/assets/ef3d0c2e-4f0e-453c-9cc8-0dae81f8995c)
+
+
+
+# 2025 - 10 - 01
+## Joins 
+
+# Left Join
+<img width="1411" height="806" alt="left join" src="https://github.com/user-attachments/assets/6b61d1f6-9408-4ab9-81dd-6f386ed6b130" />
+
+# Right Join
+<img width="1376" height="771" alt="right join" src="https://github.com/user-attachments/assets/442a9230-458a-4753-994b-760596733302" />
+
+# Inner Join and Join
+<img width="1388" height="715" alt="inner join ( join )" src="https://github.com/user-attachments/assets/61c1ba7f-6d77-40dc-8232-0d005f8b2807" />
+
+
+# 2025 - 10 - 23 
+
+SELECT COUNT(*) FROM medical_costs 
+WHERE Age BETWEEN 18 AND 25;
+
+👉 BETWEEN is inclusive — it includes both the boundary values.
+So this query counts all rows where
+Age >= 18 AND Age <= 25.
+
+SELECT COUNT(*) FROM medical_costs 
+WHERE Age > 18 AND Age < 25;
+
+👉 This query is exclusive — it does not include 18 and 25.
+It only counts rows where
+Age is strictly greater than 18 and strictly less than 25.
+
+
+# 2025 - 10 - 23 
+<img width="644" height="454" alt="union-interset-except" src="https://github.com/user-attachments/assets/5712da4c-e395-4eaf-9757-e453ee74f076" />
+<img width="263" height="191" alt="image" src="https://github.com/user-attachments/assets/ff3c6491-8e50-4433-8dd6-247fe4f68167" />
+
+
