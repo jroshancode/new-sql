@@ -22,3 +22,53 @@ Except- keep rows only from left query that are not present in right query.
 
 INTERSECT -> 4, 5
 except ->  1 , 2 , 3
+
+
+
+
+-- Union all 
+(select train_id 
+from booking ) 
+union all
+(select train_id 
+from train ) ;
+-- union 
+(select train_id 
+from booking ) 
+union 
+(select train_id 
+from train ) ;
+
+-- intersept 
+(select train_id 
+from booking ) 
+INTERSECT 
+(select train_id 
+from train ) 
+
+-- except ( A - B ) 
+(select train_id 
+from booking ) 
+except 
+(select train_id 
+from train ) ;
+-- ( B - A ) 
+(select train_id 
+from train ) 
+except 
+(select train_id 
+from booking );
+
+
+
+-- full outer join 
+( select * 
+from emp_manager emp1 
+left join emp_manager emp2 
+on emp1.EmpID = emp2.ManagerId ) 
+
+union 
+(select * 
+from emp_manager emp1 
+right join emp_manager emp2 
+on emp1.EmpID = emp2.ManagerId) ;
